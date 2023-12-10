@@ -1,51 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+  <link rel="stylesheet" href="./css/style.css">
+
   <title>Frontend Mentor | Interactive card details form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="container">
+    <div class="left-section">
+      <div class="cards">
+        <div class="front-card">
+          <img src="images/bg-card-front.png" alt="">
+          <div class="card-container">
+            <img src="./images/card-logo.svg" alt="">
+            <h2 id="number">0000 0000 0000 0000</h2>
+          </div>
+          <div class="card-information">
+            <span id="name" class="name">Jane Appleseed</span>
+            <span id="date" class="date">
+              <span id="month">00</span>/<span id="year">00</span>
+            </span>
+          </div>
+        </div>
+        <div class="back-card">
+          <img src="images/bg-card-back.png" alt="">
+          <span id="cvc" class="cvc">000</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-details">
+      <form class="form">
+        <div class="field1">
+          <label for="card-name">Cardholder Name</label>
+          <input type="text" id="card-name" placeholder="Jane Appleseed" required>
+        </div>
+        <div class="field2">
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" placeholder="1234 5678 9123 0000" required minlength="16" maxlength="16">
+          <p class="error-text">Wrong format, numbers only</p>
+        </div>
+        <div class="card-info">
+          <div id="card-date">
+            <label for="card-date">Exp. Date (MM/YY)</label>
+            <div class="inputs">
+              <div>
+                <input type="text" class="card-month" id="card-month" placeholder="00" required minlength="2"
+                  maxlength="2">
+                <p class="error-text">Can't be blank</p>
+              </div>
+              <div>
+                <input type="text" class="card-year" id="card-year" placeholder="00" required minlength="2"
+                  maxlength="2">
+              </div>
+            </div>
+          </div>
+          <div class="field4">
+            <label for="card-cvc">CVC</label>
+            <input type="text" class="card-cvc" id="card-cvc" placeholder="123" required minlength="3" maxlength="3">
+            <p class="error-text">Can't be blank</p>
+          </div>
+        </div>
+        <button class="submit-btn">Confirm</button>
+      </form>
+      <div class="thank hidden">
+        <img src="images/icon-complete.svg" alt="">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button class="continue-btn">Continue</button>
+      </div>
+    </div>
   </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">SouBeatrizKaroline</a>.
+  </div>
+
+  <script src="./js/script.js"></script>
+
 </body>
+
 </html>
